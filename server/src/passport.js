@@ -49,9 +49,8 @@ passport.use(new Strategy(jwtOptions, verifyUser));
 passport.use(
   new GoogleStrategy(
     {
-      clientID:
-        "546932309316-n6cdk1781qutho19sc1jvtf3lbv0a272.apps.googleusercontent.com",
-      clientSecret: "TlMV1CMLaVfMSNj5oAVLthst",
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLEINT_SECRET,
       callbackURL: "http://localhost:4000/auth/google/callback"
     },
     function(accessToken, refreshToken, profile, cb) {
