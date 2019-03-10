@@ -1,0 +1,9 @@
+endpoint: https://wegeo-8a132773f6.herokuapp.com/wegeo/dev
+datamodel: datamodel.prisma
+secret: ${env:PRISMA_MANAGEMENT_API_SECRET}
+generate:
+  - generator: javascript-client
+    output: ./generated/prisma-client/
+hooks:
+  post-deploy:
+    - prisma generate
